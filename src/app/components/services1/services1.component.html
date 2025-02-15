@@ -1,0 +1,55 @@
+<p>Add User Details</p>
+
+<div class="row">
+  <div class="col-6">
+    <div class="form-group">
+      <label for="userID">ID</label>
+      <input
+        type="text"
+        class="form-control"
+        id="userID"
+        placeholder="Enter User ID"
+        [(ngModel)]="userID"
+      />
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-group">
+      <label for="userName">UserName</label>
+      <input
+        type="text"
+        class="form-control"
+        id="userName"
+        [(ngModel)]="userName"
+        placeholder="Enter User Name"
+        (input)="getValue()"
+      />
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-group">
+      <label for="userID">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="userID"
+        [(ngModel)]="userEmail"
+        placeholder="Enter User Email"
+      />
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-group">
+      <label for="userID">Website</label>
+      <input
+        type="text"
+        class="form-control"
+        id="userID"
+        [(ngModel)]="userWebsite"
+        placeholder="Enter User Website"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="btn btn-primary mt-2" (click)="addUser()">Add User</div>

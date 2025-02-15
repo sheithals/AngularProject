@@ -1,0 +1,15 @@
+<div class="container p-5">
+  <p>services works!</p>
+
+  <ng-container *ngFor="let user of users">
+    <p>User Deatils {{ user.id }}</p>
+    <p>UserName: {{ user?.username }}</p>
+    <p>Email: {{ user?.email }}</p>
+    <p>Website: {{ user?.website }}</p>
+    <button class="btn btn-primary" (click)="removedUser(user)">Removed user</button>
+    <hr />
+  </ng-container>
+
+  <besant-services1 ></besant-services1>
+  <besant-services2 ></besant-services2>
+</div>

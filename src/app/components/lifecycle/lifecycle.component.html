@@ -1,0 +1,19 @@
+<p #title>lifecycle works!</p>
+<!-- <p #title>lifecycle works!</p>
+<p #title>lifecycle works!</p>
+<p #title>lifecycle works!</p>
+<p #title>lifecycle works!</p> -->
+
+<div *ngIf="isAdmin">
+  <p #role>Welcome Admin</p>
+</div>
+
+<div *ngIf="!isAdmin">
+  <p #role>Welcome User</p>
+</div>
+
+<ng-content></ng-content>
+
+<button (click)="handleClick()">Toggle Role</button>
+
+<!-- <besant-child #childComponent></besant-child> -->

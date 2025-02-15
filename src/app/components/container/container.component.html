@@ -1,0 +1,26 @@
+<p>container works!</p>
+
+<ng-container *ngIf="users.length > 0; else noUsers">
+  <ng-container *ngFor="let user of users">
+    <ng-container *ngIf="user.username; else noUserName">
+      <p>{{ user.username }}</p>
+    </ng-container>
+    <!-- <div *ngIf="!user.username">
+          <p>No User Name Present</p>
+        </div> -->
+  </ng-container>
+</ng-container>
+
+<!-- <div *ngFor="let user of usersList">
+  <div *ngIf="user.username else noUserName">
+    <p>{{ user.username }}</p>
+  </div>
+</div> -->
+
+<ng-template #noUserName>
+  <p>No User Name Present</p>
+</ng-template>
+
+<ng-template #noUsers>
+  <p>No Users</p>
+</ng-template>

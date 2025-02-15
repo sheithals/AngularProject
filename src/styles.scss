@@ -1,0 +1,22 @@
+// :root {
+//     --warning-color: yellow
+// }
+
+// p {
+//     font-style: italic;
+//     padding: 1rem;
+//     border: 1px solid gold;
+//     background-color: gold;
+//     color: black;
+//     margin-top: 1rem;
+// }
+
+.highlightELe {
+    outline: none;
+    border: none;
+    width: 20rem;
+    border-radius: 10px;
+    text-align: center;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

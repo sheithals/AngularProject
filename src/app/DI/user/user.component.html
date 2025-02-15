@@ -1,0 +1,27 @@
+<div class="card shadow p-3 mb-4 bg-white rounded">
+  <div class="card-body">
+    <h5 class="card-title text-center">User Component</h5>
+    <div class="d-flex justify-content-between align-items-center my-3">
+      <span class="fw-bold">User Name:</span>
+      <span>{{ user?.name }}</span>
+    </div>
+    <div class="d-flex justify-content-between align-items-center my-3">
+      <span class="fw-bold">Status:</span>
+      <span
+        class="badge"
+        [class.bg-success]="user.status === 'active'"
+        [class.bg-danger]="user.status === 'inactive'"
+      >
+        {{ user?.status }}
+      </span>
+    </div>
+    <!-- <div class="text-center mt-4">
+      <button class="btn btn-success me-2" (click)="onUpdateStatus('active')">
+        Set Active
+      </button>
+      <button class="btn btn-danger" (click)="onUpdateStatus('inactive')">
+        Set Inactive
+      </button>
+    </div> -->
+  </div>
+</div>

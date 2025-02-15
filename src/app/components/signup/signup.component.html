@@ -1,0 +1,224 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+          <h3>User Registration</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input
+                id="name"
+                name="fullName"
+                class="form-control"
+                formControlName="fullName"
+              />
+
+              <div
+                class="form-text text-danger"
+                *ngIf="
+                  registrationForm.get('fullName')?.invalid &&
+                  registrationForm.get('fullName')?.touched
+                "
+              >
+                Name is required and must be at least 3 characters long.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                class="form-control"
+                formControlName="email"
+              />
+              <div
+                class="form-text text-danger"
+                *ngIf="
+                  registrationForm.get('email')?.invalid &&
+                  registrationForm.get('email')?.hasError('required') &&
+                  registrationForm.get('email')?.touched
+                "
+              >
+                Enter email address.
+              </div>
+              <div
+                class="form-text text-danger"
+                *ngIf="
+                  registrationForm.get('email')?.invalid &&
+                  registrationForm.get('email')?.hasError('email') &&
+                  registrationForm.get('email')?.touched
+                "
+              >
+                Enter a valid email address.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input
+                id="password"
+                type="password"
+                name="password"
+                class="form-control"
+                formControlName="password"
+              />
+              <div
+                class="form-text text-danger"
+                *ngIf="
+                  registrationForm.get('password')?.invalid &&
+                  registrationForm.get('password')?.touched
+                "
+              >
+                Password is required and must be at least 6 characters long.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number</label>
+              <input
+                id="phone"
+                type="tel"
+                name="phone"
+                class="form-control"
+                formControlName="phone"
+              />
+              <div
+                class="form-text text-danger"
+                *ngIf="
+                  registrationForm.get('phone')?.invalid &&
+                  registrationForm.get('phone')?.touched
+                "
+              >
+                Enter a valid 10-digit phone number.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="gender" class="form-label">Gender</label>
+              <select
+                id="gender"
+                name="gender"
+                class="form-select"
+                formControlName="gender"
+              >
+                <option value="" disabled selected>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              <div
+                class="form-text text-danger"
+                *ngIf="
+                  registrationForm.get('gender')?.invalid &&
+                  registrationForm.get('gender')?.touched
+                "
+              >
+                Please select your gender.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address" class="form-label">Address</label>
+              <textarea
+                id="address"
+                name="address"
+                class="form-control"
+                formControlName="address"
+              ></textarea>
+              <div
+                class="form-text text-danger"
+                *ngIf="
+                  registrationForm.get('address')?.invalid &&
+                  registrationForm.get('address')?.touched
+                "
+              >
+                Address is required.
+              </div>
+              <div
+                class="form-text text-danger"
+                *ngIf="
+                  registrationForm.hasError('incorrect') &&
+                  registrationForm.get('address')?.touched
+                "
+              >
+                Address is incorrect.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="dob" class="form-label">Date of Birth</label>
+              <input
+                id="dob"
+                type="date"
+                name="dob"
+                class="form-control"
+                formControlName="dob"
+              />
+              <div
+                class="form-text text-danger"
+                *ngIf="
+                  registrationForm.get('dob')?.invalid &&
+                  registrationForm.get('dob')?.touched
+                "
+              >
+                Please select your date of birth.
+              </div>
+            </div>
+
+            <!-- <div class="mb-3">
+              <label for="profilePicture" class="form-label"
+                >Profile Picture</label
+              >
+              <input
+                id="profilePicture"
+                type="file"
+                name="profilePicture"
+                class="form-control"
+                formControlName="profilePicture"
+              />
+            </div> -->
+
+            <div class="form-check mb-3">
+              <input
+                type="checkbox"
+                id="terms"
+                name="terms"
+                class="form-check-input"
+                formControlName="terms"
+              />
+              <label for="terms" class="form-check-label">
+                I agree to the terms and conditions.
+              </label>
+              <div
+                class="form-text text-danger"
+                *ngIf="
+                  registrationForm.get('terms')?.invalid &&
+                  registrationForm.get('terms')?.touched
+                "
+              >
+                You must agree to the terms and conditions.
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">
+              {{ isEdit ? "Update User" : "Add User" }}
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <hr> -->
+<!-- 
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="userEmail">
+
+<p>Value: {{ userEmail.value }}</p> -->
+

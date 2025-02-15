@@ -1,0 +1,9 @@
+<p>template-ref3 works!</p>
+
+<div *ngIf="isUser; else emptyUser">
+  <p>User is Present in template ref 2 component</p>
+</div>
+
+<ng-template #emptyUser>
+  <p>User is empty in template ref 2 component</p>
+</ng-template>
